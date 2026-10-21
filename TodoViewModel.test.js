@@ -40,3 +40,12 @@ test('un filtre inconnu provoque une erreur', () => {
   assert.match(vm.erreur.get(), /inconnu/);
   assert.equal(vm.filtre.get(), 'toutes');
 });
+
+test('supprimerFaites retire les tâches cochées', () => {
+  const vm = new TodoViewModel();
+  vm.ajouter('A');
+  vm.ajouter('B');
+  vm.basculer(vm.visibles.get()[0].id);
+  vm.supprimerFaites();
+  assert.deepEqual(vm.visibles.get().map(t => t.title), ['B']);
+});

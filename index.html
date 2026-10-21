@@ -39,6 +39,7 @@
         <button data-filtre="faites">Faites</button>
         <button data-filtre="a-faire">À faire</button>
       </div>
+        <button id="purger">Supprimer les tâches faites</button>
       <p class="error"></p>
       <ul></ul>
       <p class="counter"></p>
@@ -70,6 +71,7 @@
       vm.restantes.subscribe(n => (compteur.textContent = `${n} tâche(s) à faire`));
       vm.filtre.subscribe(f => {
         boutons.forEach(b => b.classList.toggle('actif', b.dataset.filtre === f));
+            app.querySelector('#purger').onclick = () => vm.supprimerFaites();
       });
       vm.visibles.subscribe(todos => {
         liste.innerHTML = '';

@@ -30,6 +30,10 @@ export class TodoViewModel {
     this.model.remove(id);
   }
 
+  supprimerFaites() {
+    this.model.supprimerFaites();
+  }
+  
   changerFiltre(nom) {
     try {
       this.model.filtrer(nom); // lève une erreur si le nom est inconnu

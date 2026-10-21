@@ -20,6 +20,11 @@ export class TodoModel {
     this.#todos = this.#todos.filter(t => t.id !== id);
     this.#notify();
   }
+  supprimerFaites() {
+    this.#todos = this.#todos.filter(t => !t.done);
+    this.#notify();
+  }
+
   all() {
     return this.#todos.map(t => ({ ...t }));
   } // copie défensive
