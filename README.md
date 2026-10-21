@@ -18,3 +18,7 @@
   mesures arrivent en continu, et les valeurs observables mettent l'écran à jour
   automatiquement, sans que le Controller rappelle `render()` à chaque mise à jour.
   Le ViewModel reste testable sans écran.
+  - **Bonus « Supprimer les tâches faites » en MVVM** : 3 fichiers modifiés
+  (`TodoModel.js`, `TodoViewModel.js`, `index.html`), plus un test. La page ne fait
+  que transmettre le clic ; `visibles` et `restantes` se mettent à jour tout seuls.
+  En MVC, il aurait fallu aussi toucher la View et le Controller.
