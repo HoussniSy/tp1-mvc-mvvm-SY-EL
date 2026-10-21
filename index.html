@@ -19,14 +19,26 @@
       li {
         margin: 6px 0;
       }
+      #filtres {
+        margin: 12px 0;
+      }
+      #filtres .actif {
+        background: #fc3;
+        font-weight: bold;
+      }
     </style>
   </head>
   <body>
-    <h1>Todo-list (MVC)</h1>
+    <h1>Todo-list (MVC + filtre)</h1>
     <div id="app">
       <form>
         <input placeholder="Nouvelle tâche" autofocus /> <button>Ajouter</button>
       </form>
+      <div id="filtres">
+        <button data-filtre="toutes">Toutes</button>
+        <button data-filtre="faites">Faites</button>
+        <button data-filtre="a-faire">À faire</button>
+      </div>
       <p class="error"></p>
       <ul></ul>
       <p class="counter"></p>
